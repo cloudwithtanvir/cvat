@@ -23,7 +23,7 @@ jobs:
 
       - name: Configure Docker to use GCR
         run: |
-          echo "${{ secrets.GCP_SA_KEY }}" | base64 --decode > ${HOME}/gcloud-key.json
+          echo "${{ secrets.GCP_SA_KEY }}" > ${HOME}/gcloud-key.json
           gcloud auth activate-service-account --key-file=${HOME}/gcloud-key.json
           gcloud auth configure-docker
 
